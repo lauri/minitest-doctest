@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'minitest/doctest'
+require 'minitest/autorun'
+
+Minitest::Doctest.run(ARGV[0])
