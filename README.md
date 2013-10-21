@@ -1,4 +1,8 @@
-### minitest-doctest
+## minitest-doctest
+
+Generate tests from code comments and run them with Minitest. It's like Python's doctest for Ruby.
+
+### Example
 
 ```ruby
 # calculator.rb
@@ -21,21 +25,23 @@ class Calculator
     nil
   end
 end
-
-# $ minidoctest calculator.rb
-# 
-# Run options: --seed 59837
-# 
-# # Running:
-# 
-# ..
-# 
-# Finished in 0.001274s, 1569.8587 runs/s, 2354.7881 assertions/s.
-# 
-# 2 runs, 3 assertions, 0 failures, 0 errors, 0 skips
 ```
 
-#### Usage
+```
+$ minidoctest calculator.rb
+
+Run options: --seed 59837
+
+# Running:
+
+..
+
+Finished in 0.001274s, 1569.8587 runs/s, 2354.7881 assertions/s.
+
+2 runs, 3 assertions, 0 failures, 0 errors, 0 skips
+```
+
+### Usage
 
 Add to Gemfile:
 
@@ -56,7 +62,7 @@ require 'minitest/doctest'
 require 'minitest/autorun'
 
 task :doctest do
-  f = FileList["app/**/*.rb"]
+  f = FileList["*.rb"]
   Minitest::Doctest.run(f)
 end
 ```
