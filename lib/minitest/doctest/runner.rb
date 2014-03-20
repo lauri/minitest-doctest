@@ -11,9 +11,9 @@ module Minitest
         @test_strings = Parser.new(File.read(file)).parse
       end
 
-      def run
+      def run(require_file)
         define_tests
-        require File.join(Dir.pwd, @file)
+        require File.absolute_path(@file) if require_file
       end
 
       def define_tests
