@@ -66,3 +66,6 @@ task :doctest do
   Minitest::Doctest.run(f)
 end
 ```
+
+### License
+This content is released under the [MIT License](http://opensource.org/licenses/MIT).
