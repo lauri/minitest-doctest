@@ -1,4 +1,4 @@
-require 'minitest'
+require "minitest"
 
 module Minitest
   module Doctest

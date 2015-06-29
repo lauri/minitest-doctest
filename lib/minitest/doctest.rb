@@ -1,6 +1,6 @@
-require 'minitest/doctest/parser'
-require 'minitest/doctest/runner'
-require 'minitest/doctest/version'
+require "minitest/doctest/parser"
+require "minitest/doctest/runner"
+require "minitest/doctest/version"
 
 module Minitest
   module Doctest

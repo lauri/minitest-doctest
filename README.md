@@ -47,7 +47,7 @@ Add to Gemfile:
 
 ```ruby
 # Gemfile
-gem 'minitest-doctest', github: 'lauri/minitest-doctest'
+gem "minitest-doctest", github: "lauri/minitest-doctest"
 ```
 
 To test a single file you can use the executable `minidoctest`:
@@ -58,8 +58,8 @@ To test a bunch of files you can create a Rake task and use FileList:
 
 ```ruby
 # Rakefile
-require 'minitest/doctest'
-require 'minitest/autorun'
+require "minitest/doctest"
+require "minitest/autorun"
 
 task :doctest do
   f = FileList["*.rb"]

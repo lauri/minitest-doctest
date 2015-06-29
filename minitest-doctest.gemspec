@@ -1,6 +1,6 @@
 # encoding: utf-8
-$: << File.expand_path('../lib', __FILE__)
-require 'minitest/doctest/version'
+$: << File.expand_path("../lib", __FILE__)
+require "minitest/doctest/version"
 
 Gem::Specification.new do |gem|
   gem.name          = "minitest-doctest"
@@ -16,5 +16,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'minitest', '> 5.1'
+  gem.add_dependency "minitest", "> 5.1"
 end
