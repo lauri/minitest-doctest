@@ -67,5 +67,21 @@ task :doctest do
 end
 ```
 
+This works fine when the files you're testing are self-contained. If they are not you'll get an error when minitest-doctest tries to `require` the file. In this case you'll have to work out requiring all the necessary files yourself and pass `false` as the second argument to `Minitest::Doctest.run`.
+
+With Rails you can just create a Rake task which loads up the environment like this:
+
+```ruby
+# lib/tasks/doctest.rake
+task doctest: :environment do
+  Rails.env = "test"
+  require "minitest/doctest"
+  require "minitest/autorun"
+
+  f = FileList["#{Rails.root}/**/*.rb"]
+  Minitest::Doctest.run(f, false)
+end
+```
+
 ### License
 This content is released under the [MIT License](http://opensource.org/licenses/MIT).
