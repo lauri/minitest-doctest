@@ -8,6 +8,7 @@ module Minitest
       def initialize(file)
         @file = file
         @test_class = Class.new(Minitest::Test)
+        @test_class.define_singleton_method(:to_s) { file }
         @test_strings = Parser.new(File.read(file)).parse
       end
 

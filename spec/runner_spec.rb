@@ -11,4 +11,8 @@ describe Minitest::Doctest::Runner do
     test.must_respond_to :test_0
     test.must_respond_to :test_1
   end
+
+  it "should return file name with #to_s on test_class" do
+    @runner.test_class.to_s.must_match "calculator.rb"
+  end
 end
