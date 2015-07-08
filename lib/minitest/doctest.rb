@@ -4,8 +4,8 @@ require "minitest/doctest/version"
 
 module Minitest
   module Doctest
-    def self.run(files, require_file=true)
-      Array(files).each { |file| Runner.new(file).run(require_file) }
+    def self.run(file_paths, require_file=true)
+      Array(file_paths).each { |f| Runner.new(f).run(require_file) }
     end
   end
 end

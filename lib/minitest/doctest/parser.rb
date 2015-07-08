@@ -19,7 +19,7 @@ module Minitest
 
       def blocks
         regexp = /^(#{C}#{I}.*?)$(?!#{C}(?:#{I}|#{O}))/m
-        source.scan(regexp).flatten
+        @source.scan(regexp).flatten
       end
 
       def test_lines(block)
