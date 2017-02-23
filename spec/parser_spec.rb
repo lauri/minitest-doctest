@@ -24,6 +24,6 @@ describe Minitest::Doctest::Parser do
 
   it "should create test string from lines" do
     test = @parser.test_string(@parser.test_lines(@blocks[1]), 1)
-    test.must_match /\s*def test_1$\s*_ = Calculator.add\(:a, 42\)$\s*assert_equal\(nil, _\)$\s*end/
+    test.must_match(/\s*def test_1$\s*_ = Calculator.add\(:a, 42\)$\s*assert_equal\(nil, _\)$\s*end/)
   end
 end
