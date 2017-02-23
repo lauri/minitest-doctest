@@ -75,8 +75,8 @@ With Rails you can just create a Rake task which loads up the environment like t
 # lib/tasks/doctest.rake
 task doctest: :environment do
   Rails.env = "test"
-  Minitest.run_with_autorun = true # Rails 5
-  
+  Minitest.run_via[:ruby] = true # Rails 5
+
   require "minitest/doctest"
   require "minitest/autorun"
 
