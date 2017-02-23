@@ -26,6 +26,7 @@ module Minitest
         block.lines.map do |line|
           case line
           when /#{I} (.*?)$/ then "_ = #{$1}"
+          when /#{O} (nil)$/ then "assert_nil(_)"
           when /#{O} (.*?)$/ then "assert_equal(#{$1}, _)"
           end
         end

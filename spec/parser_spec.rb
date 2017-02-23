@@ -19,11 +19,11 @@ describe Minitest::Doctest::Parser do
     lines[0][2].must_equal "_ = Calculator.add(1, 10, 100, 1000)"
     lines[0][3].must_equal "assert_equal(1111, _)"
     lines[1][0].must_equal "_ = Calculator.add(:a, 42)"
-    lines[1][1].must_equal "assert_equal(nil, _)"
+    lines[1][1].must_equal "assert_nil(_)"
   end
 
   it "should create test string from lines" do
     test = @parser.test_string(@parser.test_lines(@blocks[1]), 1)
-    test.must_match(/\s*def test_1$\s*_ = Calculator.add\(:a, 42\)$\s*assert_equal\(nil, _\)$\s*end/)
+    test.must_match(/\s*def test_1$\s*_ = Calculator.add\(:a, 42\)$\s*assert_nil\(_\)$\s*end/)
   end
 end
