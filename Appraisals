@@ -1,5 +1,9 @@
+appraise "minitest-5.10" do
+  gem "minitest", "5.10.1"
+end
+
 appraise "minitest-5.9" do
-  gem "minitest", "5.9.0"
+  gem "minitest", "5.9.1"
 end
 
 appraise "minitest-5.8" do
